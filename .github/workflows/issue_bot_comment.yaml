@@ -1,0 +1,25 @@
+name: Add_Comment
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  Add-Comment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Echo issue number
+        run: echo ${{ github.event.issue.number }}
+        shell: bash
+
+      - name: Add comment to issue
+        uses: peter-evans/create-issue-comment@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Thank you for opening this issue! We will look into it as soon as possible.
