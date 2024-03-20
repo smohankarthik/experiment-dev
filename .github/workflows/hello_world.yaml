@@ -10,12 +10,16 @@ on:
   workflow_dispatch:
 
 env:
-  CUSTOM_REGISTRY: "docker.pkg.github.com"
+  CUSTOM_REGISTRY: "registry.hub.docker.com"
     
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: node:14
+      env:
+        CUSTOM_REGISTRY: ${{ env.CUSTOM_REGISTRY }}
 
     steps:
       - name: Checkout repository
@@ -27,6 +31,8 @@ jobs:
 
       - name: echo the variables.container_image
         run: echo ${{ env.CUSTOM_REGISTRY }}
+
+      
 
       # - uses: actions/setup-node@v2
       #   with:
