@@ -17,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ${{ env.CUSTOM_REGISTRY }}/node:14
+      image: ${{ CUSTOM_REGISTRY }}/node:14
       # env:
       #   CUSTOM_REGISTRY: ${{ env.CUSTOM_REGISTRY }}
 
