@@ -10,14 +10,14 @@ on:
   workflow_dispatch:
 
 env:
-  CUSTOM_REGISTRY: "registry.hub.docker.com"
+  CUSTOM_REGISTRY: "gcr.io"
     
 
 jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: node:14
+      image: kaniko-project/executor:v1.21.1-debug
       env:
         CUSTOM_REGISTRY: ${{ env.CUSTOM_REGISTRY }}
 
