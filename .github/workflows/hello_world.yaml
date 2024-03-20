@@ -17,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: kaniko-project/executor:v1.21.1-debug
+      image: $CUSTOM_REGISTRY/kaniko-project/executor:v1.21.1-debug
       env:
         CUSTOM_REGISTRY: ${{ env.CUSTOM_REGISTRY }}
 
