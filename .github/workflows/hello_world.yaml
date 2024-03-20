@@ -8,6 +8,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+
+env:
+  CUSTOM_REGISTRY: "docker.pkg.github.com"
     
 
 jobs:
@@ -21,6 +24,9 @@ jobs:
       - name: Hello World
         run: echo "Hello World"
         shell: bash
+
+      - name: echo the variables.container_image
+        run: echo ${{ env.CUSTOM_REGISTRY }}
 
       # - uses: actions/setup-node@v2
       #   with:
