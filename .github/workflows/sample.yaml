@@ -1,0 +1,22 @@
+name: Example Workflow
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print branch or tag name
+        run: echo "The branch or tag name is ${GITHUB_REF_NAME}"
+
+      - name: Print branch or tag name using context
+        run: echo "The branch or tag name is ${{ github.ref_name }}"
+        
+      - name: Use branch name in a script
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
+        run: |
+          echo "Branch Name: $BRANCH_NAME"
+
