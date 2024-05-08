@@ -1,15 +1,21 @@
-name: 'Testing Composite Action'
+name: 'Testing_Composite_Action'
 description: 'This is an example of a test Composite Action in GitHub Actions.'
 inputs:
   Name: # Name of the input
     description: 'Testing the input'
     required: true
     default: 'Bob'
+  Sensitive: # Name of the input
+    description: 'Testing the sensitive input'
+    required: true
 runs:
   using: 'composite'
   steps:
     - name: First Step
       run: echo "Hello ${{ inputs.Name }}"
+      shell: bash
+    - name: Testing the sensitive input
+      run: echo "The sensitive input is ${{ inputs.Sensitive }}"
       shell: bash
     - name: Second Step
       id: step_two

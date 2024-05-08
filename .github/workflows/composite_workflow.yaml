@@ -15,10 +15,11 @@ jobs:
       
       steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
   
       - name: Use My Composite Action
         uses: ./gh_custom_actions/
         with:
             Name: 'Alice'
+            Sensitive: ${{ secrets.Sensitive_IP }}
   
