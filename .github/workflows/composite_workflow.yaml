@@ -20,5 +20,5 @@ jobs:
       - name: Use My Composite Action
         uses: ./gh_custom_actions/
         with:
-          example_input: 'Hello World'
+            Name: 'Alice'
   
