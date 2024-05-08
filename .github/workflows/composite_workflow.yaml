@@ -1,0 +1,24 @@
+name: Hello World
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    
+jobs:
+    composite_workflow:
+      runs-on: ubuntu-latest
+      
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  
+      - name: Use My Composite Action
+        uses: ./gh_custom_actions/Testing_Composite_Action/@v1
+        with:
+          example_input: 'Hello World'
+  

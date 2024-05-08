@@ -1,0 +1,20 @@
+name: 'Testing Composite Action'
+description: 'This is an example of a test Composite Action in GitHub Actions.'
+inputs:
+  Name: # Name of the input
+    description: 'Testing the input'
+    required: true
+    default: 'Bob'
+runs:
+  using: 'composite'
+  steps:
+    - name: First Step
+      run: echo "Hello ${{ inputs.Name }}"
+      shell: bash
+    - name: Second Step
+      id: step_two
+      run: echo "::set-output name=date_output::$(date)"
+      shell: bash
+outputs:
+  date_output:
+    description: "The result from Second Step"
