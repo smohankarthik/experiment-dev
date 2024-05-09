@@ -1,0 +1,19 @@
+name: Wrapped_Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    
+jobs:
+    wrapped_composite_workflow:
+      uses: ./wrapped_action/
+      with:
+        Sensitive: ${{ secrets.SENSITIVE_IP_TOKEN }}
+        image: 'node:14'
+  
+  
