@@ -1,0 +1,31 @@
+name: Wrapped Workflow
+description: 'Testing Wrapped workflow'
+
+inputs:
+  image:
+    description: 'Docker image to use'
+    required: true
+    type: string
+    default: 'ubuntu:latest'
+
+  Sensitive:  
+    description: 'Testing the sensitive input'
+    required: true
+
+jobs:
+  wrapped_job:
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run a script
+        run: |
+          echo "Hello from the wrapped job"
+
+      - name: Testing the sensitive input
+        run: echo "The sensitive input is ${{ inputs.Sensitive }}"
+        shell: bash 

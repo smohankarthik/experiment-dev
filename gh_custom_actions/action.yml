@@ -8,6 +8,7 @@ inputs:
   Sensitive: # Name of the input
     description: 'Testing the sensitive input'
     required: true
+    
 runs:
   using: 'composite'
   steps:
