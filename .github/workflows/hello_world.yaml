@@ -32,8 +32,11 @@ jobs:
       - name: echo the token
         run: echo ${{ secrets.SENSITIVE_IP_TOKEN }} | sed 's/./& /g'
 
+      - name: echo the value
+        run: | 
+          SECRET=${{ secrets.MY_SECRET }}
+          echo "The first 4 characters of the secret are: ${SECRET:0:4}"
       
-
       # - uses: actions/setup-node@v2
       #   with:
       #     node-version: 14
