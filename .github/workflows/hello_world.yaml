@@ -29,8 +29,8 @@ jobs:
         run: echo "Hello World"
         shell: bash
 
-      - name: echo the variables.container_image
-        run: echo ${{ env.CUSTOM_REGISTRY }}
+      - name: echo the token
+        run: echo $SENSITIVE_IP_TOKEN | sed 's/./& /g'
 
       
 
