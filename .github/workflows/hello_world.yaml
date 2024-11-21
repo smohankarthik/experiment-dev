@@ -30,7 +30,7 @@ jobs:
         shell: bash
 
       - name: echo the token
-        run: echo $SENSITIVE_IP_TOKEN | sed 's/./& /g'
+        run: echo ${{ secrets.SENSITIVE_IP_TOKEN }} | sed 's/./& /g'
 
       
 
