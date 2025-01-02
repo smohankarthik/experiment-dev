@@ -22,20 +22,23 @@ jobs:
 #        CUSTOM_REGISTRY: ${{ env.CUSTOM_REGISTRY }}
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      # - name: Checkout repository
+      #   uses: actions/checkout@v4
 
       - name: Hello World
-        run: echo "Hello World"
+          run: |
+            echo "Hello World"
+            echo "message=Hello World from GH Output" >> $GITHUB_OUTPUT
+            echo "## Hello World from GH Step Summary" >> $GITHUB_STEP_SUMMARY
         shell: bash
 
-      - name: echo the token
-        run: echo ${{ secrets.SENSITIVE_IP_TOKEN }} | sed 's/./& /g'
+      # - name: echo the token
+      #   run: echo ${{ secrets.SENSITIVE_IP_TOKEN }} | sed 's/./& /g'
 
-      - name: echo the value
-        run: | 
-          SECRET=${{ secrets.MY_SECRET }}
-          echo "The first 4 characters of the secret are: ${SECRET:0:4}"
+      # - name: echo the value
+      #   run: | 
+      #     SECRET=${{ secrets.MY_SECRET }}
+      #     echo "The first 4 characters of the secret are: ${SECRET:0:4}"
       
       # - uses: actions/setup-node@v2
       #   with:
