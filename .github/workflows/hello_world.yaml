@@ -36,7 +36,7 @@ jobs:
       - name: Set Output
         id: set-output
         run: |
-          echo "{{ steps.gh_out.outputs.message }}"
+          echo "${{ steps.gh_out.outputs.message }}"
         shell: bash
 
       # - name: echo the token
