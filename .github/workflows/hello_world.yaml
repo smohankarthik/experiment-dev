@@ -26,10 +26,10 @@ jobs:
       #   uses: actions/checkout@v4
 
       - name: Hello World
-          run: |
-            echo "Hello World"
-            echo "message=Hello World from GH Output" >> $GITHUB_OUTPUT
-            echo "## Hello World from GH Step Summary" >> $GITHUB_STEP_SUMMARY
+        run: |
+          echo "Hello World"
+          echo "message=Hello World from GH Output" >> $GITHUB_OUTPUT
+          echo "## Hello World from GH Step Summary" >> $GITHUB_STEP_SUMMARY
         shell: bash
 
       # - name: echo the token
