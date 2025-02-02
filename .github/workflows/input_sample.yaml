@@ -1,0 +1,29 @@
+name: User Input Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      predefined_list:
+        description: 'Select an option'
+        required: true
+        type: choice
+        options:
+          - option1
+          - option2
+          - option3
+      single_input:
+        description: 'Enter a value'
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display inputs
+        run: |
+          echo "Selected option: ${{ github.event.inputs.predefined_list }}"
+          echo "Entered value: ${{ github.event.inputs.single_input }}"
