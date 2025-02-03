@@ -7,6 +7,7 @@ on:
         description: 'Select an option'
         required: true
         type: choice
+        default: 'option4 --> test'
         options:
           - option1
           - option2
@@ -15,6 +16,7 @@ on:
         description: 'Enter a value'
         required: true
         type: string
+        default: 'option4 --> test'
 
 jobs:
   build:
