@@ -1,6 +1,9 @@
 name: User Input Workflow
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       predefined_list:
