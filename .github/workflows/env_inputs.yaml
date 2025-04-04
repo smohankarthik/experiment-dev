@@ -12,12 +12,15 @@ on:
 jobs:
   job:
     runs-on: ubuntu-latest
+    env:
+      value: ${{ github.event.inputs.pickone }}
     steps:
       - name: Step 1 - Set a variable
         id: set_variable
         run: |
           echo "Hello"
           echo "option_one_before_edit: ${{ github.event.inputs.pickone }}"
+          value_name="${value}"
 
-      # - name: Step 2 - Use the variable
-      #   run: echo "The variable value is: $MY_VAR"
+      - name: Step 2 - Use the variable
+        run: echo "The variable value is: $value_name"
