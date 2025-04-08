@@ -25,12 +25,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # - name: Date_Check
-      #   run: |
-      #     Date_mod=$(date+'%Y%m%d')
-      #     Date=$(date)
-      #     echo "Date_mode=$Date_mod"
-      #     echo "Date=$Date"
+      - name: Date_Check
+        run: |
+          Date_mod=$(date+ '%Y%m%d')
+          Date=$(date)
+          echo "Date_mode=$Date_mod"
+          echo "Date=$Date"
 
       - name: Set DATE variable in yyyyMMdd format
         run: echo "DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
