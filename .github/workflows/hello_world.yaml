@@ -27,7 +27,7 @@ jobs:
 
       - name: Date_Check
         run: |
-          Date_mod=$(date+ '%Y%m%d')
+          Date_mod=$(date + '%Y%m%d')
           Date=$(date)
           echo "Date_mode=$Date_mod"
           echo "Date=$Date"
