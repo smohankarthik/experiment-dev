@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 #    container:
 #      image: $CUSTOM_REGISTRY/kaniko-project/executor:v1.21.1-debug
 #      env:
@@ -24,6 +24,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Date_Check
+        run: |
+          Date_mod=$(date+'%Y%m%d')
+          Date=$(date)
+          echo "Date_mode=$Date_mod"
+          echo "Date=$Date"
+
 
       # - name: Hello World
       #   id: gh_out
